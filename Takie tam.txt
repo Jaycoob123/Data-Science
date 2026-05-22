@@ -1,0 +1,15 @@
+funkcja make_circles 
+: - wszytko
+1 - drugi element z pary
+
+Odpowiednie skalowanie danych do sieci neuronowych
+
+Po co zrobić to?
+
+Dlaczego wypełniamy dane medianę a nie średnią
+Dlaczego to albo to?
+Czemu to służy?
+
+Jako ten który potrafi przczytać i się nauczyć?
+
+Trzeba sobie ugruntować temat
