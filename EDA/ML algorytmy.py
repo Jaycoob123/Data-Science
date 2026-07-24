@@ -27,7 +27,7 @@ X = df.iloc( : , :-1)
 Y = df.target
 
 (X_train, y_train)
-print(mo  X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=.2)
+print( X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=.2)
 
 model = LogisticRegression()
 model.fidel.score(X_test, y_test))
