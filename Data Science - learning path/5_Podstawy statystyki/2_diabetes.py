@@ -59,9 +59,26 @@ plt.show()
 wynik = stats.ttest_ind(
     grupa_0["glucose"],
     grupa_1["glucose"],
-    equal_var=False  # różna wariancja w grupach
+    equal_var=False  # różna wariancja w grupach albo nie wiemy czy jest taka sama
 )
 
 print("\nTest t Welcha dla glucose:")
 print("Statystyka testowa:", wynik.statistic)    # średnia glucose w grupa_0 jest dużo większa niż średnia glucose w grupa_1
 print("p-value:", wynik.pvalue)  # jak bardzo nasze dane są zgodne z hipotezą zerową
+if wynik.pvalue < 0.05:
+    print("Różnica średnich glucose jest statystycznie istotna.")
+else:
+    print("Brak podstaw do stwierdzenia statystycznie istotnej różnicy.")
+
+# Prawdopodobieństwo warunkowe.
+# jakie jest prawdopodobieństwo jednego zdażenia, jeśli wiemy, że zaszło inne zdażenie?
+# jaki odsetek osób ma outcome = 1, jeśli ich glukoza jest powyżej mediany
+mediana_glucose = df["glucose"].median()
+df["osoby_powyzej_mediany"] = df["glucose"] > mediana_glucose
+
+tabela = pd.crosstab(
+    df['osoby_powyzej_mediany'],
+    df['outcome']
+)
+print()
+print(tabela)
